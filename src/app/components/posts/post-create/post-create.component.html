@@ -1,0 +1,11 @@
+<h1>CREATE NEW POST</h1>
+<form [formGroup]="addPostForm" (ngSubmit)="createPost()">
+  <h4>Tag</h4>
+  <input  class="form-control" style="width: 500px" type="text" formControlName="tag">
+  <h4>URL</h4>
+  <input class="form-control" style="width: 500px" type="text" formControlName="url">
+  <h4>Descriptions</h4>
+  <textarea class="form-control" style="width: 500px" type="text" formControlName="descriptions"></textarea><br>
+  <button class="btn btn-success" type="submit">Submit</button>
+  <button class="btn btn-danger" routerLink="/posts">Back</button>
+</form>

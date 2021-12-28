@@ -1,0 +1,29 @@
+<h1>LIST</h1>
+<button class="btn btn-primary" routerLink="create">Add New</button>
+<table class="table">
+  <thead class="table-dark">
+  <tr>
+    <th>ID</th>
+    <th>Tag</th>
+    <th>URL</th>
+    <th>Description</th>
+    <th colspan="2">Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let post of posts; index as i ">
+    <td>{{post.id}}</td>
+    <td>{{post.tag}}</td>
+    <td>{{post.url}}</td>
+    <td>{{post.descriptions}}</td>
+    <td>
+      <button mat-fab color="accent" class="btn btn-success" routerLink="update/{{post.id}}"><mat-icon>bookmark</mat-icon></button>
+    </td>
+    <td>
+      <button mat-fab color="warn" class="btn btn-danger" onclick="return confirm('Are you sure ?')" (click)="delete(i)" ><mat-icon>delete</mat-icon></button>
+    </td>
+  </tr>
+  </tbody>
+
+
+</table>
